@@ -1,62 +1,58 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --textColor: #4b4b4b;
+  --textColor: #4b4b4b;
 }
 
 body {
-    background-color: none;
-    width: 100%;
+  width: 100%;
 }
 
 .todo-app {
-    width: 30%;
-    margin: 2rem auto;
-    box-shadow: -1px 1px 6px 0px #878586;
-}
-
-.todo-app {
-    color: var(--textColor);
+  width: 30%;
+  margin: 2rem auto;
+  box-shadow: -1px 1px 6px 0 #878586;
+  color: var(--textColor);
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(69, 69, 70, 0.5);
-    padding: .75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(69, 69, 70, 0.5);
+  padding: 0.75rem;
 }
 
-.header>h1 {
-    font-size: 1rem;
-    color: var(--textColor);
+.header > h1 {
+  font-size: 1rem;
+  color: var(--textColor);
 }
 
 .todo-input-wrapper {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid rgba(69, 69, 70, 0.5);
-    padding: .75rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(69, 69, 70, 0.5);
+  padding: 0.75rem;
 }
 
 .todo-input-wrapper input {
-    padding: .1rem;
-    border: none;
-    outline: none;
-    width: 100%;
-    font-style: italic;
+  padding: 0.1rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-style: italic;
 }
 
 .todo-wrapper {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-    border-bottom: 1px solid rgba(69, 69, 70, 0.5);
-    color: var(--textColor);  
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(69, 69, 70, 0.5);
+  color: var(--textColor);
 }
 
 .todo-wrapper > .left-align {
@@ -64,13 +60,13 @@ body {
 }
 
 .left-align p {
-    padding: 0 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .clear-all-btn {
-    width: 100%;
-    background-color: #e3e3e3;
-    padding: .75rem;
-    border: none;
-    color: var(--textColor);
+  width: 100%;
+  background-color: #e3e3e3;
+  padding: 0.75rem;
+  border: none;
+  color: var(--textColor);
 }

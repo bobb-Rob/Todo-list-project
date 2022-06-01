@@ -1,13 +1,10 @@
-import todos from './todoItems';
+import todos from './todoItems.js';
 import './style.css';
 
-
-
-
-const todoItem = ({description, index}) => {
+const todoItem = ({ description, index }) => {
   const liEl = document.createElement('li');
   liEl.classList.add('todo-wrapper');
-  liEl.id = `todo-${index}`
+  liEl.id = `todo-${index}`;
   liEl.innerHTML = `
     <div class='left-align'>
       <div>
@@ -21,14 +18,14 @@ const todoItem = ({description, index}) => {
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
     </div>
       `;
-    return liEl;
-}
+  return liEl;
+};
 
 const displayTodo = () => {
   const listContainer = document.querySelector('.todo-list-holder');
   todos.forEach((todo) => {
-  listContainer.appendChild(todoItem(todo));
+    listContainer.appendChild(todoItem(todo));
   });
-}
+};
 
-document.addEventListener('DOMContentLoaded', displayTodo)
+document.addEventListener('DOMContentLoaded', displayTodo);
