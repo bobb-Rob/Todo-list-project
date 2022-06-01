@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --textColor: #4b4b4b;
+}
+
 body {
     background-color: none;
     width: 100%;
@@ -15,8 +19,8 @@ body {
     box-shadow: -1px 1px 6px 0px #878586;
 }
 
-.todo-app i {
-    color: #7c7c7c;
+.todo-app {
+    color: var(--textColor);
 }
 
 .header {
@@ -27,13 +31,13 @@ body {
     padding: .75rem;
 }
 
-.header > h1 {
+.header>h1 {
     font-size: 1rem;
-    color: #7c7c7c;
+    color: var(--textColor);
 }
 
 .todo-input-wrapper {
-    display: flex;  
+    display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(69, 69, 70, 0.5);
     padding: .75rem;
@@ -43,8 +47,24 @@ body {
     padding: .1rem;
     border: none;
     outline: none;
-    width: 80%;
+    width: 100%;
     font-style: italic;
+}
+
+.todo-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgba(69, 69, 70, 0.5);
+    color: var(--textColor);  
+}
+
+.todo-wrapper > .left-align {
+  display: flex;
+}
+
+.left-align p {
+    padding: 0 0.5rem;
 }
 
 .clear-all-btn {
@@ -52,5 +72,5 @@ body {
     background-color: #e3e3e3;
     padding: .75rem;
     border: none;
-    color: #7c7c7c;
+    color: var(--textColor);
 }
