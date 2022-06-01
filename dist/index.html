@@ -5,20 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3da71c9faf.js" crossorigin="anonymous"></script>
     <title>Todo-List</title>
-<script defer src="runtime.bundle.js"></script><script defer src="app.bundle.js"></script></head>
+<script defer src="main.js"></script></head>
 
 <body>
-    <div>
-        <h1>Today's To Do</h1>
-    </div>
-    <div>
-        <input type="text">
-    </div>
-    <ul class="todo-list-holder">
+    <div class="todo-app">
+        <div class="header">
+            <h1>Today's To Do</h1>
+            <i class="fa-solid fa-rotate"></i>
+        </div>
+        <div class="todo-input-wrapper">
+            <input type="text" placeholder="Add to your list...">
+            <i class="fa-solid fa-arrow-turn-down-left"></i>
+        </div>
+        <ul class="todo-list-holder">
 
-    </ul>
-    <button type="button">Clear all as in completed</button>
+        </ul>
+        <button type="button" class="clear-all-btn">Clear all completed</button>
+    </div>
 </body>
 
 </html>
