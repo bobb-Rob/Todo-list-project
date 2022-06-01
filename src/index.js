@@ -21,11 +21,11 @@ const todoItem = ({ description, index }) => {
   return liEl;
 };
 
-const displayTodo = () => {
+const displayItems = () => {
   const listContainer = document.querySelector('.todo-list-holder');
   todos.forEach((todo) => {
     listContainer.appendChild(todoItem(todo));
   });
 };
 
-document.addEventListener('DOMContentLoaded', displayTodo);
+document.addEventListener('DOMContentLoaded', displayItems);
