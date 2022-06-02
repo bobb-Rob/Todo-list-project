@@ -27,7 +27,7 @@ body {
   padding: 0.75rem;
 }
 
-.header>h1 {
+.header > h1 {
   font-size: 1rem;
   color: var(--textColor);
 }
@@ -55,7 +55,7 @@ body {
   color: var(--textColor);
 }
 
-.todo-wrapper>.left-align {
+.todo-wrapper > .left-align {
   display: flex;
   align-items: center;
   width: 100%;
@@ -74,7 +74,7 @@ body {
 }
 
 .edit-input {
-  padding: 0.1rem .75rem;
+  padding: 0.1rem 0.75rem;
   border: none;
   outline: none;
   width: 100%;
