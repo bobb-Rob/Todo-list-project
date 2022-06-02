@@ -15,8 +15,12 @@ AddTaskInput.addEventListener('change', (e) => {
 
   if(inputEl.value !== ''){
     const listContainer = document.querySelector('.todo-list-holder');
-    todoApp.addTaskToArr(newTask);   
-    todoApp.addtaskToUI(newTask, listContainer);
+    todoApp.addTaskToArr(newTask);
+
+    while (listContainer.firstChild) { //Remove all task in the list
+      listContainer.removeChild(listContainer.firstChild);
+    }
+    displayItems(); //insert all task including the new task
     Store.setTask(newTask);
     AddTaskInput.value = '';
     console.log(todoApp.todos)

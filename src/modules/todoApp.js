@@ -11,16 +11,17 @@ class TodoApp {
     addTaskToArr = (task) => {
         let todoList = this.todos;
         this.todos = [...todoList, task];    
-    }
-
-    addtaskToUI = (task, location) => { 
-        location.appendChild(todoCard(task));
-    };
-    
+    } 
     
     removeTask = (id) => {
         let todoList = this.todos;
         this.todos = todoList.filter((task => task.index !== id))
+    }
+
+    resetIndex = () => {
+        this.todos.forEach((task, index) => {
+            task.index = index + 1;
+        });
     }
 
 }
