@@ -50,7 +50,7 @@ export default class Store {
 
     static deleteAllTask = () => {
       let allTask = Store.getTask();
-      allTask = allTask.filter((task) => !task)      
+      allTask = allTask.filter((task) => !task);
       localStorage.setItem('todos', JSON.stringify(allTask));
     }
 }
