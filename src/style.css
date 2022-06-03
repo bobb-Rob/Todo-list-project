@@ -57,6 +57,8 @@ body {
 
 .todo-wrapper > .left-align {
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .left-align p {
@@ -69,4 +71,28 @@ body {
   padding: 0.75rem;
   border: none;
   color: var(--textColor);
+}
+
+.edit-input {
+  padding: 0.1rem 0.75rem;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: #f6f6c8;
+}
+
+.ionic {
+  font-size: 1.3rem;
+}
+
+.delete-icon {
+  color: red;
+}
+
+.none {
+  display: none !important;
+}
+
+.description-wrapper {
+  width: 100%;
 }
