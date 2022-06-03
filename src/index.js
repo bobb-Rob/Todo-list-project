@@ -97,7 +97,7 @@ document.querySelector('.clear-all-btn').addEventListener('click', () => {
   todoApp.deleteAllTodos();
   Store.deleteAllTask();
   const listContainer = document.querySelector('.todo-list-holder');
-  while (listContainer.firstChild) { // Remove all task in the list
+  while (listContainer.firstChild) {
     listContainer.removeChild(listContainer.firstChild);
   }
   displayItems();
