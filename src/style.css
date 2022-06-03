@@ -73,6 +73,10 @@ body {
   color: var(--textColor);
 }
 
+.clear-all-btn:hover {
+  cursor: pointer;
+}
+
 .edit-input {
   padding: 0.1rem 0.75rem;
   border: none;
@@ -96,3 +100,4 @@ body {
 .description-wrapper {
   width: 100%;
 }
+

@@ -20,6 +20,22 @@ class TodoApp {
         task.index = index + 1;
       });
     }
+
+    markAsComplete = (id) => {
+        for(let i = 0; i < this.todos.length; i+=1){
+            if(this.todos[i].index === id){
+                if(this.todos[i].completed){
+                    this.todos[i].completed = false;
+                }else{
+                    this.todos[i].completed = true;
+                }               
+            }
+        }
+    }
+
+    deleteAllTodos = () => {
+        this.todos = [];
+    }
 }
 
 const todoApp = new TodoApp(Store.getTask());
