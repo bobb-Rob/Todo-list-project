@@ -6,9 +6,8 @@ import displayItems from './modules/displayTask.js';
 import './style.css';
 
 // event
-// Display TodoList 
-displayItems()
-
+// Display TodoList
+displayItems();
 
 // Edit and Delete task event
 const editEl = (e) => {
@@ -66,7 +65,7 @@ const moreIconEvent = () => {
   moreIconArr.forEach((icon) => {
     icon.addEventListener('click', editEl);
   });
-}
+};
 
 moreIconEvent();
 
@@ -94,15 +93,12 @@ AddTaskInput.addEventListener('change', (e) => {
   }
 });
 
-
 document.querySelector('.clear-all-btn').addEventListener('click', () => {
   todoApp.deleteAllTodos();
   Store.deleteAllTask();
   const listContainer = document.querySelector('.todo-list-holder');
-    while (listContainer.firstChild) { // Remove all task in the list
-      listContainer.removeChild(listContainer.firstChild);
-    }
+  while (listContainer.firstChild) { // Remove all task in the list
+    listContainer.removeChild(listContainer.firstChild);
+  }
   displayItems();
-})
-
-console.log(todoApp.todos)
+});

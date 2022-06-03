@@ -1,4 +1,3 @@
-
 const todoCard = ({ description, index }) => {
   const liEl = document.createElement('li');
   liEl.classList.add('todo-wrapper');

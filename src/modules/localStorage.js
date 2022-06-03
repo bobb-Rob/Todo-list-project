@@ -35,21 +35,22 @@ export default class Store {
     }
 
     static toggleMarkAsComplete = (id) => {
-        const allTask = Store.getTask();
-        for(let i = 0; i < allTask.length; i+=1){
-            if(allTask[i].index === id){
-                if(allTask[i].completed){
-                   allTask[i].completed = false;
-                }else{
-                    allTask[i].completed = true;
-                }               
-            }
+      const allTask = Store.getTask();
+      for (let i = 0; i < allTask.length; i += 1) {
+        if (allTask[i].index === id) {
+          if (allTask[i].completed) {
+            allTask[i].completed = false;
+          } else {
+            allTask[i].completed = true;
+          }
         }
-        localStorage.setItem('todos', JSON.stringify(allTask));
+      }
+      localStorage.setItem('todos', JSON.stringify(allTask));
     }
 
-    static deleteAllTask = () => {       
-        let allTask = [];
-        localStorage.setItem('todos', JSON.stringify(allTask));
+    static deleteAllTask = () => {
+      let allTask = Store.getTask();
+      allTask = allTask.filter((task) => !task)      
+      localStorage.setItem('todos', JSON.stringify(allTask));
     }
 }
