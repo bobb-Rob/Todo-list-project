@@ -34,7 +34,7 @@ class TodoApp {
     }
 
     deleteAllTodos = () => {
-      this.todos = this.todos.filter((task) => !task);
+      this.todos = this.todos.filter((task) => task.completed !== true);
     }
 }
 
