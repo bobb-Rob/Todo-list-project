@@ -36,16 +36,22 @@ const editEl = (e) => {
   const idLength = todoWrap.id.length;
   const taskId = Number(todoWrap.id[idLength - 1]);
 
-  inputEl.addEventListener('change', (e) => {
-    const input = e.target;
-    desc.textContent = input.value;
-    desc.classList.toggle('none');
-    moreIcon.classList.toggle('none');
-    todoWrap.style.backgroundColor = '';
-    Store.editTaskLocalStore(taskId, input.value);
-    deleteIcon.remove();
-    input.remove();
+  inputEl.addEventListener('keyup', (e) => {
+    e.stopPropagation()
+    let code = e.keyCode || e.code || e.key;
+    if(code === 13  ){
+      console.log(code)
+      const input = e.target;
+      desc.textContent = input.value;
+      desc.classList.toggle('none');
+      moreIcon.classList.toggle('none');
+      todoWrap.style.backgroundColor = '';
+      Store.editTaskLocalStore(taskId, input.value);
+      deleteIcon.remove();
+      input.remove();
+    }
   });
+
 
   deleteIcon.addEventListener('click', () => {
     const listContainer = document.querySelector('.todo-list-holder');
@@ -55,6 +61,8 @@ const editEl = (e) => {
     }
     /* eslint-disable no-use-before-define */
     displayItems(); // insert all task including the new task
+    moreIconEvent();
+    addCheckboxEvent();
     Store.removeTask(taskId);
   });
 };
