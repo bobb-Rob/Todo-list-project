@@ -37,10 +37,9 @@ const editEl = (e) => {
   const taskId = Number(todoWrap.id[idLength - 1]);
 
   inputEl.addEventListener('keyup', (e) => {
-    e.stopPropagation()
-    let code = e.keyCode || e.code || e.key;
-    if(code === 13  ){
-      console.log(code)
+    e.stopPropagation();
+    const code = e.keyCode || e.code || e.key;
+    if (code === 13) {
       const input = e.target;
       desc.textContent = input.value;
       desc.classList.toggle('none');
@@ -51,7 +50,6 @@ const editEl = (e) => {
       input.remove();
     }
   });
-
 
   deleteIcon.addEventListener('click', () => {
     const listContainer = document.querySelector('.todo-list-holder');
