@@ -100,11 +100,13 @@ AddTaskInput.addEventListener('change', (e) => {
 });
 
 document.querySelector('.clear-all-btn').addEventListener('click', () => {
-  todoApp.deleteAllTodos();
-  Store.deleteAllTask();
+  todoApp.deleteCompletedTask();
+  Store.deleteCompletedTask();
   const listContainer = document.querySelector('.todo-list-holder');
   while (listContainer.firstChild) {
     listContainer.removeChild(listContainer.firstChild);
   }
   displayItems();
+  moreIconEvent();
+  addCheckboxEvent();
 });

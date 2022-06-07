@@ -18,10 +18,14 @@ export default class Store {
     static removeTask = (id) => {
       let allTask = Store.getTask();
       allTask = allTask.filter((task) => task.index !== id);
+      Store.resetIndex(allTask);
+      localStorage.setItem('todos', JSON.stringify(allTask));
+    }
+
+    static resetIndex = (allTask) => {
       allTask.forEach((task, index) => {
         task.index = index + 1;
       });
-      localStorage.setItem('todos', JSON.stringify(allTask));
     }
 
     static editTaskLocalStore = (id, newDesc) => {
@@ -48,9 +52,10 @@ export default class Store {
       localStorage.setItem('todos', JSON.stringify(allTask));
     }
 
-    static deleteAllTask = () => {
+    static deleteCompletedTask = () => {
       let allTask = Store.getTask();
-      allTask = allTask.filter((task) => task.completed !== true);
+      allTask = allTask.filter((task) => !task.completed);
+      Store.resetIndex(allTask);
       localStorage.setItem('todos', JSON.stringify(allTask));
     }
 }
