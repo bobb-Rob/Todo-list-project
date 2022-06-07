@@ -33,8 +33,9 @@ class TodoApp {
       }
     }
 
-    deleteAllTodos = () => {
+    deleteCompletedTask = () => {
       this.todos = this.todos.filter((task) => task.completed !== true);
+      this.resetIndex(this.todos);
     }
 }
 
