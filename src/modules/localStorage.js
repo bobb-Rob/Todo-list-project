@@ -12,13 +12,17 @@ export default class Store {
     static setTask = (newTask) => {
       let task = Store.getTask();
       task = [...task, newTask];
-      localStorage.setItem('todos', JSON.stringify(task));
+      Store.udpateStore(task);
     }
 
     static removeTask = (id) => {
       let allTask = Store.getTask();
       allTask = allTask.filter((task) => task.index !== id);
       Store.resetIndex(allTask);
+      Store.udpateStore(allTask);
+    }
+
+    static udpateStore = (allTask) => {
       localStorage.setItem('todos', JSON.stringify(allTask));
     }
 
@@ -35,7 +39,7 @@ export default class Store {
           allTask[i].description = newDesc;
         }
       }
-      localStorage.setItem('todos', JSON.stringify(allTask));
+      Store.udpateStore(allTask);
     }
 
     static toggleMarkAsComplete = (id) => {
@@ -49,13 +53,13 @@ export default class Store {
           }
         }
       }
-      localStorage.setItem('todos', JSON.stringify(allTask));
+      Store.udpateStore(allTask);
     }
 
     static deleteCompletedTask = () => {
       let allTask = Store.getTask();
       allTask = allTask.filter((task) => !task.completed);
       Store.resetIndex(allTask);
-      localStorage.setItem('todos', JSON.stringify(allTask));
+      Store.udpateStore(allTask);
     }
 }
