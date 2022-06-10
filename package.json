@@ -4,11 +4,18 @@
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test-watch": "jest --watchAll",
     "watch": "webpack --watch",
     "start": "webpack serve --open",
     "build": "webpack",
     "deploy": "npm run build && gh-pages -d dist"
+  },
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "repository": {
     "type": "git",
@@ -22,6 +29,7 @@
   },
   "homepage": "https://github.com/bobb-Rob/Todo-list-project#readme",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.18.2",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
     "eslint": "^7.32.0",
@@ -30,6 +38,7 @@
     "gh-pages": "^4.0.0",
     "hint": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.1",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
@@ -40,6 +49,8 @@
     "webpack-dev-server": "^4.9.0"
   },
   "dependencies": {
+    "babel-jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
     "uniqid": "^5.4.0"
   }
 }

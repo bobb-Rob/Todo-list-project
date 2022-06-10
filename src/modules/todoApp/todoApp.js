@@ -1,16 +1,16 @@
-import Store from './localStorage.js';
+import Store from '../localStorage.js';
 
 class TodoApp {
   constructor(todos) {
     this.todos = todos;
   }
 
-    addTaskToArr = (task) => {
-      const todoList = this.todos;
-      this.todos = [...todoList, task];
+    addTaskToArr = (task, todos) => {
+      const todoList = todos;
+      todos = [...todoList, task];
     }
 
-    removeTask = (id) => {
+    removeTask = id => {
       const todoList = this.todos;
       this.todos = todoList.filter(((task) => task.index !== id));
     }

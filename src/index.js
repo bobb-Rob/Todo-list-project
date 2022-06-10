@@ -1,4 +1,4 @@
-import todoApp from './modules/todoApp.js';
+import todoApp from './modules/todoApp/todoApp.js';
 import Task from './modules/task.js';
 import Store from './modules/localStorage.js';
 import addCheckboxEvent from './modules/statusUpdate.js';
@@ -86,7 +86,7 @@ AddTaskInput.addEventListener('change', (e) => {
 
   if (inputEl.value !== '') {
     const listContainer = document.querySelector('.todo-list-holder');
-    todoApp.addTaskToArr(newTask);
+    todoApp.addTaskToArr(newTask, todoApp.todos);
 
     while (listContainer.firstChild) { // Remove all task in the list
       listContainer.removeChild(listContainer.firstChild);

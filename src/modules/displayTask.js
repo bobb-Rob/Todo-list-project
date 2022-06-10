@@ -1,4 +1,4 @@
-import todoApp from './todoApp.js';
+import todoApp from './todoApp/todoApp.js';
 import todoCard from './todoCard.js';
 
 const displayItems = () => {
