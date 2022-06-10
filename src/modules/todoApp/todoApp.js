@@ -1,25 +1,18 @@
 import Store from '../localStorage.js';
 
 class TodoApp {
-  constructor(todos) {
-    this.todos = todos;
+  constructor() {
+    this.todos = Store.getTask();
   }
 
-    addTaskToArr = (task, todos) => {
-      const todoList = todos;
-      todos = [...todoList, task];
-    }
+    addTaskToArr = (task) => this.todos = [...this.todos, task];
 
-    removeTask = id => {
-      const todoList = this.todos;
-      this.todos = todoList.filter(((task) => task.index !== id));
-    }
+    removeTask = id => this.todos = this.todos.filter(((task) => task.index !== id));
 
-    resetIndex = () => {
-      this.todos.forEach((task, index) => {
+    resetIndex = () => this.todos.forEach((task, index) => {
         task.index = index + 1;
       });
-    }
+    
 
     markAsComplete = (id) => {
       for (let i = 0; i < this.todos.length; i += 1) {
@@ -39,5 +32,5 @@ class TodoApp {
     }
 }
 
-const todoApp = new TodoApp(Store.getTask());
+const todoApp = new TodoApp();
 export default todoApp;

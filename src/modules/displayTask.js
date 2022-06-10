@@ -1,5 +1,5 @@
 import todoApp from './todoApp/todoApp.js';
-import todoCard from './todoCard.js';
+import { todoCard } from './domElements.js';
 
 const displayItems = () => {
   const listContainer = document.querySelector('.todo-list-holder');
@@ -7,5 +7,7 @@ const displayItems = () => {
     listContainer.appendChild(todoCard(todo));
   });
 };
+
+
 
 export default displayItems;
