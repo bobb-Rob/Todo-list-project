@@ -2,7 +2,7 @@
 
 # To Do List App
 
-> This is a project aimed at exercising my ES6 syntax, ES6 modules and webpack skills
+> This is a todo App created to help you stay organized. It was built with pure JavaScript with a aim to exercise my ES6 syntax, ES6 modules and webpack skills.
 
 
 ## Built With
